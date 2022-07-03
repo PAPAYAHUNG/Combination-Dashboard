@@ -41,10 +41,6 @@ function App() {
             <Route path='color-picker' element={<ColorPicker/>} />
             <Route path='pyramid' element={<Pyramid/>} />
             <Route path='stacked' element={<Stacked/>} />
-
-
-            
-
         </Route>
       </Routes>
     </div>

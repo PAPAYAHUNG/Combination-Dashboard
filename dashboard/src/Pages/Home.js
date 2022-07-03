@@ -17,7 +17,7 @@ function Home() {
         {activeMenu && <Sidebar />}
       </div>
       <div
-        className={` bg-red-600  flex-1 min-h-full
+        className={`  flex-1 min-h-full
              ${activeMenu ? "ml-72" : "ml-0"}`}
       >
         
