@@ -8,8 +8,8 @@ function Sidebar() {
   const { setIsActiveMenu } = useStateContext();
 
   return (
-    <div>
-      <div className="flex justify-between m-2 items-center">
+    <div className=" h-screen overflow-y-scroll">
+      <div className="flex justify-between m-2 items-center ">
         <div className="font-extrabold text-2xl">Shoppy</div>
         <TooltipComponent content={"close"} position={"BottomCenter"}>
           <button
@@ -29,10 +29,13 @@ function Sidebar() {
               {item.title.toUpperCase()}
               {item.links.map((component, index2) => {
                 return (
-                  <NavLink to={`${component.name}`} key={index2}>
-                    <div className="flex items-center ml-2">
-                      {component.icon}
-                      {component.name.toUpperCase()}
+                  <NavLink to={`${component.name}`}
+                   key={index2}
+                   className={({isActive}) =>isActive ? 'activeLink' :'' }
+                  >
+                    <div className="flex items-center ml-2 p-2 rounded gap-2 tracking-tight hover:bg-slate-600">
+                      <span className="mr-2">{component.icon}</span>
+                      <span className="text-sm">{component.name.toUpperCase()}</span>
                     </div>
                   </NavLink>
                 );
