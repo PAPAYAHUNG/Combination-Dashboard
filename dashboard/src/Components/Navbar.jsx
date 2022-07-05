@@ -29,7 +29,7 @@ function Navbar() {
 
         handleResize()
         return ()=>{window.removeEventListener('resize',handleResize)}
-  },[])
+  },[screen])
 
   useEffect(()=>{
     if(screen < 760) {
