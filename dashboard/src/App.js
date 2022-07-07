@@ -19,6 +19,7 @@ import Financial from './Components/Charts/Financial';
 import ColorMapping from './Components/Charts/ColorMapping';
 import Pyramid from './Components/Charts/Pyramid';
 import Stacked from './Components/Charts/Stacked';
+import { Component } from 'react';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='ecommerce' element={<Ecommerce/>} />
             <Route path='orders' element={<Order/>} />
             <Route path='employees' element={<Employee/>} />
+            <Route path='customers' element={<Customers/>} />
             <Route path='calendar' element={<Calendar/>} />
             <Route path='kanban' element={<Kanban/>} />
             <Route path='editor' element={<Editor/>} />

@@ -9,6 +9,7 @@ import {
 import { SparklineAreaData } from "../../data/data/dummy.js";
 import { earningData } from "../../data/data/dummy.js";
 import Line from "../Charts/Line";
+import Stacked from "../Charts/Stacked";
 function Ecommerce() {
   const StatusIcon = ({
     icon,
@@ -83,7 +84,7 @@ function Ecommerce() {
             </div>
           </div>
         </div>
-        <div className="flex mt-7 ">
+        <div className=" mt-7 ">
           <div>
             <div>
               <span className="font-bold text-3xl">$93,438 </span>
@@ -97,24 +98,33 @@ function Ecommerce() {
               {/* <span className="font-semibold text-green-600">+23% </span> */}
               <p className="text-gray-500">Expense</p>
             </div>
-
-            <div className="mt-10">
-              <Line
-                height="100px"
-                width="300px"
-                id="sparkline"
-                type="Line"
-                color="blue"
-                currentColor="blue"
-                data={SparklineAreaData}
-              />
-            </div>
-            <div className="mt-10">
-                <Button
-                color="white"
-                bgColor="blue"
-                content="Download report"
+          </div>
+          <div className="flex justify-between">
+            <div>
+              <div className="mt-10">
+                <Line
+                  height="100px"
+                  width="300px"
+                  id="sparkline"
+                  type="Line"
+                  color="blue"
+                  currentColor="blue"
+                  data={SparklineAreaData}
                 />
+              </div>
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  bgColor="blue"
+                  content="Download report"
+                />
+              </div>
+            </div>
+            <div>
+              <Stacked
+              width="500px"
+              height="250px"
+              />
             </div>
           </div>
         </div>
