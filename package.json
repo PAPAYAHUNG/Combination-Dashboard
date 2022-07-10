@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@syncfusion/ej2-react-inputs": "^20.2.36"
+  }
+}
