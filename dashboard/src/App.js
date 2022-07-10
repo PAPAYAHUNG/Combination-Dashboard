@@ -20,10 +20,16 @@ import ColorMapping from './Components/Charts/ColorMapping';
 import Pyramid from './Components/Charts/Pyramid';
 import Stacked from './Components/Charts/Stacked';
 import { Component } from 'react';
+import ThemeProvider from './context/ThemeProvider/ThemeProvider';
+import SettingButton from './Components/SmallComponent/SettingButton';
+import { useStateContext } from './context/ContextProvider';
 
 function App() {
+  const {isOpenSetttingBar, setIsOpenSetttingBar} = useStateContext()
   return (
     <div className="App">
+      <SettingButton/>
+     {isOpenSetttingBar &&  <ThemeProvider/>}
       <Routes>
         <Route path='/' element={<Home/>}>
             <Route path='/' element={<Ecommerce/>} />

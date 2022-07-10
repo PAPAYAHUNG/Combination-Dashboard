@@ -10,7 +10,10 @@ import { SparklineAreaData } from "../../data/data/dummy.js";
 import { earningData } from "../../data/data/dummy.js";
 import Line from "../Charts/Line";
 import Stacked from "../Charts/Stacked";
+import { useStateContext } from "../../context/ContextProvider";
 function Ecommerce() {
+  const { themeColor } = useStateContext();
+
   const StatusIcon = ({
     icon,
     amount,
@@ -19,6 +22,7 @@ function Ecommerce() {
     iconColor,
     iconBg,
     pcColor,
+    
   }) => {
     return (
       <div className="flex bg-gray-600 w-full flex-col rounded-2xl p-3 justify-center items-center hover:text-orange-600 cursor-pointer">
@@ -42,7 +46,7 @@ function Ecommerce() {
         <div className="absolute top-3 left-3">
           <p className="text-gray-500">Earnings</p>
           <p className="font-bold text-3xl">$63,448.78</p>
-          <Button color="white" bgColor="orange" content="Download" size="lg" />
+          <Button color="white" bgColor={themeColor} content="Download" size="lg" />
         </div>
       </div>
 
@@ -115,7 +119,7 @@ function Ecommerce() {
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={themeColor}
                   content="Download report"
                 />
               </div>

@@ -8,6 +8,10 @@ const context = createContext();
 function ContextProvider({ children }) {
     const [activeMenu, setIsActiveMenu] = useState(true)
     const [screen, setScreen] = useState(undefined)
+    const [isOpenSetttingBar, setIsOpenSetttingBar] = useState(false)
+    const [selectedColor, setSelectedColor] = useState('')
+    const [selectedTheme, setSelectedTheme] = useState('')
+    const themeColor = localStorage.getItem('themeColor')
     const initialState = {
       cart:false,
       message:false,
@@ -21,6 +25,7 @@ function ContextProvider({ children }) {
 
 
 
+
   return <context.Provider
            value={{
             activeMenu,
@@ -29,7 +34,13 @@ function ContextProvider({ children }) {
             setIsclicked,
             handleClicked,
             screen,
-            setScreen
+            setScreen,
+            isOpenSetttingBar, 
+            setIsOpenSetttingBar,
+            selectedColor, 
+            setSelectedColor,
+            selectedTheme, setSelectedTheme,
+            themeColor
            }
            }
             >

@@ -4,15 +4,15 @@ import Sidebar from "../Components/Sidebar";
 import { useStateContext } from "../context/ContextProvider";
 
 function Home() {
-  const { activeMenu, setActiveMenu } = useStateContext();
-  console.log({ activeMenu });
-
+  const { activeMenu, setActiveMenu,selectedColor } = useStateContext();
+  console.log({ selectedColor });
+  const themeColor = localStorage.getItem('themeColor')
   return (
     <div className="relative flex dark:bg-main-dark-bg ">
       <div
         className={`fixed bg-slate-500 
              ${activeMenu ? " w-72" : "w-0"}`}
-        // style = {{width:activeMenu ? 'calc(100%-)' : "w-0"}}
+        style = {{backgroundColor: themeColor!=="" ? themeColor :"currentcolor" }}
       >
         {activeMenu && <Sidebar />}
       </div>

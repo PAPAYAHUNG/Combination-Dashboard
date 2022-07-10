@@ -23,6 +23,7 @@ function Navbar() {
     handleClicked,
     screen,
     setScreen,
+    themeColor
   } = useStateContext();
 
   // watching monitor resize
@@ -74,7 +75,7 @@ function Navbar() {
           <NavButton
             title="Toggel sidebar"
             icon={<FaBuffer />}
-            color="blue"
+            color={themeColor}
             dotColor="orange"
             customFunc={() => {
               setIsActiveMenu((prev) => !prev);
@@ -86,7 +87,7 @@ function Navbar() {
           <NavButton
             title="Cart"
             icon={<FaShoppingCart />}
-            color="blue"
+            color={themeColor}
             customFunc={() => {
               handleClicked("cart");
             }}
@@ -94,7 +95,7 @@ function Navbar() {
           <NavButton
             title="Message"
             icon={<AiOutlineWechat />}
-            color="blue"
+            color={themeColor}
             dotColor="orange"
             customFunc={() => {
               handleClicked("message");
@@ -103,7 +104,7 @@ function Navbar() {
           <NavButton
             title="Notification"
             icon={<AiTwotoneBell />}
-            color="blue"
+            color={themeColor}
             dotColor="yellow"
             customFunc={() => {
               handleClicked("notification");
