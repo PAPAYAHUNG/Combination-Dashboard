@@ -25,9 +25,9 @@ import SettingButton from './Components/SmallComponent/SettingButton';
 import { useStateContext } from './context/ContextProvider';
 
 function App() {
-  const {isOpenSetttingBar, setIsOpenSetttingBar} = useStateContext()
+  const {isOpenSetttingBar, setIsOpenSetttingBar,currentMode} = useStateContext()
   return (
-    <div className="App">
+    <div className={currentMode==="dark" ? 'dark' : ''} >
       <SettingButton/>
      {isOpenSetttingBar &&  <ThemeProvider/>}
       <Routes>

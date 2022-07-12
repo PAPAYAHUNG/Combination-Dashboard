@@ -4,7 +4,7 @@ import { customersData,customersGrid } from '../../data/data/dummy';
 import Header from '../SmallComponent/Header';
 function Customers() {
   return (
-    <div>
+    <div className='p-3'>
       <Header page="Page" title="Customers"/>
       <GridComponent 
       dataSource={customersData}

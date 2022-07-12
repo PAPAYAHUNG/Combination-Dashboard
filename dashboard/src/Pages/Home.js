@@ -8,16 +8,16 @@ function Home() {
   console.log({ selectedColor });
   const themeColor = localStorage.getItem('themeColor')
   return (
-    <div className="relative flex dark:bg-main-dark-bg ">
+    <div className="relative flex   dark:bg-slate-800 dark:text-white">
       <div
         className={`fixed bg-slate-500 
              ${activeMenu ? " w-72" : "w-0"}`}
-        style = {{backgroundColor: themeColor!=="" ? themeColor :"currentcolor" }}
+        // style = {{backgroundColor: themeColor!=="" ? themeColor :"currentcolor" }}
       >
         {activeMenu && <Sidebar />}
       </div>
       <div
-        className={`  flex-1 min-h-full
+        className={`  flex-1 min-h-full dark:text-white dark:bg-main-dark-bg
              ${activeMenu ? "ml-72" : "ml-0"}`}
       >
         

@@ -1,10 +1,26 @@
 import React from "react";
 import { themeColors } from "../../data/data/dummy";
-import { AiFillCloseCircle,AiFillCheckCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillCheckCircle } from "react-icons/ai";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useStateContext } from "../ContextProvider";
 function ThemeProvider() {
-  const { isOpenSetttingBar, setIsOpenSetttingBar,selectedColor, setSelectedColor,selectedTheme, setSelectedTheme } = useStateContext();
+  const {
+    isOpenSetttingBar,
+    setIsOpenSetttingBar,
+    selectedColor,
+    setSelectedColor,
+    selectedTheme,
+    setSelectedTheme,
+    currentMode,
+    setCurrentMode,
+  } = useStateContext();
+
+  console.log({ currentMode });
+  const handleCheck = (e) => {
+    // console.log("check", e.target.value);
+    setCurrentMode(e.target.value);
+  };
+
   return (
     <div className="bg-half-transparent nav-item w-screen fixed bottom-0 top-0 right-0 z-50 ">
       <div className="fixed right-0 top-0 w-72 h-screen p-2 bg-gray-400">
@@ -28,7 +44,8 @@ function ThemeProvider() {
               className="cursor-pointer"
               name="theme"
               value="light"
-              checked={true}
+              checked={currentMode === "light"}
+              onChange={handleCheck}
             />
 
             <label htmlFor="light" className="ml-3">
@@ -43,6 +60,8 @@ function ThemeProvider() {
               className="cursor-pointer"
               name="theme"
               value="dark"
+              checked={currentMode === "dark"}
+              onChange={handleCheck}
             />
             <label htmlFor="dark" className="ml-3">
               Dark
@@ -57,20 +76,19 @@ function ThemeProvider() {
                 <TooltipComponent
                   key={index}
                   position="Top"
-                  content={item.name} 
+                  content={item.name}
                 >
                   <div
-                    onClick={()=>{
-                        setSelectedTheme(item.name)
-                        setSelectedColor(item.color)
-                        localStorage.setItem('themeColor',item.color)
-                        setIsOpenSetttingBar((prev) => !prev);
+                    onClick={() => {
+                      setSelectedTheme(item.name);
+                      setSelectedColor(item.color);
+                      localStorage.setItem("themeColor", item.color);
+                      setIsOpenSetttingBar((prev) => !prev);
                     }}
                     className={`rounded-full cursor-pointer w-8 h-8 flex items-center justify-center text-2xl`}
                     style={{ backgroundColor: item.color }}
                   >
-                {selectedTheme===item.name ?  <AiFillCheckCircle/> :""  }
-                   
+                    {selectedTheme === item.name ? <AiFillCheckCircle /> : ""}
                   </div>
                 </TooltipComponent>
               );

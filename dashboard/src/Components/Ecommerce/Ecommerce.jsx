@@ -57,7 +57,7 @@ function Ecommerce() {
             { icon, amount, percentage, title, iconColor, iconBg, pcColor },
             index
           ) => {
-            console.log({ icon });
+            // console.log({ icon });
             return (
               <div className="" key={index}>
                 <StatusIcon

@@ -11,6 +11,7 @@ function ContextProvider({ children }) {
     const [isOpenSetttingBar, setIsOpenSetttingBar] = useState(false)
     const [selectedColor, setSelectedColor] = useState('')
     const [selectedTheme, setSelectedTheme] = useState('')
+    const [currentMode, setCurrentMode] = useState('light')
     const themeColor = localStorage.getItem('themeColor')
     const initialState = {
       cart:false,
@@ -40,7 +41,8 @@ function ContextProvider({ children }) {
             selectedColor, 
             setSelectedColor,
             selectedTheme, setSelectedTheme,
-            themeColor
+            themeColor,
+            currentMode, setCurrentMode
            }
            }
             >

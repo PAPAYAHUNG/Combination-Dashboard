@@ -8,7 +8,7 @@ import { kanbanGrid, kanbanData } from "../../data/data/dummy";
 import Header from "../SmallComponent/Header";
 function Kanban() {
   return (
-    <div className="">
+    <div className="p-3">
       <Header title='Kanban' page='Page'/>
       <KanbanComponent
       id="kanban"

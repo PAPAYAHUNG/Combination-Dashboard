@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
 import { links } from "../data/data/dummy";
 function Sidebar() {
-  const { setIsActiveMenu, screen, setScreen } = useStateContext();
+  const { setIsActiveMenu, screen, setScreen,themeColor } = useStateContext();
 
+  console.log({themeColor});
   //handle auto close when click at small screen
   const handleAutoClose = ()=>{
     if(screen < 700){
@@ -40,6 +41,7 @@ function Sidebar() {
                   <NavLink to={`${component.name}`}
                    key={index2}
                    className={({isActive}) =>isActive ? 'activeLink' :'' }
+                   style={({isActive}) =>({backgroundColor:isActive ? themeColor:""})}
                    onClick={handleAutoClose}
                   >
                     <div className="flex items-center ml-2 p-2 rounded gap-2 tracking-tight hover:bg-slate-600">
