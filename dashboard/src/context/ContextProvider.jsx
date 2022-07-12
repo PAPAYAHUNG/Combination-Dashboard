@@ -12,6 +12,7 @@ function ContextProvider({ children }) {
     const [selectedColor, setSelectedColor] = useState('')
     const [selectedTheme, setSelectedTheme] = useState('')
     const [currentMode, setCurrentMode] = useState('light')
+    const [isActiveCart, setisActiveCart] = useState(false)
     const themeColor = localStorage.getItem('themeColor')
     const initialState = {
       cart:false,
@@ -24,6 +25,10 @@ function ContextProvider({ children }) {
       setIsclicked({...initialState,[componentClicked]:true })
     }
 
+    const handleCloseClick = (componentClicked)=>{
+      setIsclicked({...initialState,[componentClicked]:false})
+    }
+
 
 
 
@@ -33,7 +38,7 @@ function ContextProvider({ children }) {
             setIsActiveMenu,
             isClicked,
             setIsclicked,
-            handleClicked,
+            handleClicked,handleCloseClick,
             screen,
             setScreen,
             isOpenSetttingBar, 

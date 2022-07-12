@@ -10,7 +10,7 @@ function Sidebar() {
   console.log({themeColor});
   //handle auto close when click at small screen
   const handleAutoClose = ()=>{
-    if(screen < 700){
+    if(screen < 1024){
       setIsActiveMenu(false)
     }
 

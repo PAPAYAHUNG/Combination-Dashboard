@@ -23,7 +23,7 @@ import {
 } from "../../data/data/dummy.js";
 import Header from "../SmallComponent/Header.jsx";
 import { useStateContext } from "../../context/ContextProvider.jsx";
-function Pie({ width, height }) {
+function Line2({ width, height }) {
   const {currentMode} = useStateContext()
   return (
     <div className="p-10">
@@ -51,4 +51,4 @@ function Pie({ width, height }) {
   );
 }
 
-export default Pie;
+export default Line2;

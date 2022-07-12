@@ -23,6 +23,7 @@ import { Component } from 'react';
 import ThemeProvider from './context/ThemeProvider/ThemeProvider';
 import SettingButton from './Components/SmallComponent/SettingButton';
 import { useStateContext } from './context/ContextProvider';
+import Line2 from './Components/Charts/Line2';
 
 function App() {
   const {isOpenSetttingBar, setIsOpenSetttingBar,currentMode} = useStateContext()
@@ -40,7 +41,7 @@ function App() {
             <Route path='calendar' element={<Calendar/>} />
             <Route path='kanban' element={<Kanban/>} />
             <Route path='editor' element={<Editor/>} />
-            <Route path='line' element={<Line/>} />
+            <Route path='line' element={<Line2/>} />
             <Route path='area' element={<Area/>} />
             <Route path='bar' element={<Bar/>} />
             <Route path='pie' element={<Pie/>} />

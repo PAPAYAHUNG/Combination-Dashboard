@@ -25,7 +25,7 @@ function Ecommerce() {
     
   }) => {
     return (
-      <div className="flex bg-gray-600 w-full flex-col rounded-2xl p-3 justify-center items-center hover:text-orange-600 cursor-pointer">
+      <div className="flex dark:text-white bg-gray-600 w-full flex-col rounded-2xl p-3 justify-center items-center hover:text-orange-600 cursor-pointer">
         <div
           className=" w-16 h-16 rounded-full p-2 text-center "
           style={{ color: iconColor, fontSize: 50, backgroundColor: iconBg }}
